@@ -1,1 +1,12 @@
 {% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <img id="AdminMiCuenta" src="{% static "Index/img/Index_MiCuenta.png" %}"/>
+        <img id="AdminEstudiante" src="{% static "Index/img/Index_Estudiantes.png" %}"/>
+    </div>
+
+
+{% endblock content %}
