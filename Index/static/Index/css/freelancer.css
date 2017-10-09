@@ -2,7 +2,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 25%;
+        margin-top: 25%;
     width: 19%;
 }
 
@@ -13,8 +13,42 @@
     margin-top: -39.5%;
 }
 
-#AdminMiCuentaV{
+#AdminAsistencias{
     display: block;
+    margin-left: 50.5%;
+    margin-right: auto;
+    margin-top: -22%;
     width: 19%;
-    margin-left: 10%;
+}
+
+#AdminClases{
+    display: block;
+    margin-left: 60.7%;
+    margin-right: auto;
+    margin-top: -4%;
+    width: 19%;
+}
+
+#AdminInstituciones{
+    display: block;
+    margin-left: 20.2%;
+    margin-right: auto;
+    margin-top: -21.7%;
+    width: 19%;
+}
+
+#AdminReportes{
+    display: block;
+    margin-left: 30.5%;
+    margin-right: auto;
+    margin-top: -4%;
+    width: 19%;
+}
+
+#AdminUsuarios{
+    display: block;
+    margin-left: 50.7%;
+    margin-right: auto;
+    margin-top: -22%;
+    width: 19%;
 }
