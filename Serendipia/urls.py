@@ -17,5 +17,5 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^Admin', include('Index.urls', namespace='Admin')),
+    url(r'^administrador', include('Index.urls', namespace='administrador')),
 ]
