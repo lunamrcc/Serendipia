@@ -18,11 +18,11 @@
 
 </head>
 
-<body class="grey lighten-3">
+<body class="white">
 
   <nav>
-    <div class="purple darken-3 nav-wrapper">
-      <a href="{% url 'administrador:Index' %}" class="brand-logo">Logo</a>
+    <div class="pink darken-4 nav-wrapper">
+      <a href="{% url 'administrador:dashboard' %}" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="sass.html"><i class="material-icons left">settings_power</i>Cerrar Sesión</a></li>
   </ul>
@@ -34,5 +34,8 @@
   {% endblock content %}
 
 </body>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static "Index/js/materialize.min.js" %}"></script>
 
 </html>

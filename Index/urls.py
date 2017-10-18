@@ -1,7 +1,11 @@
-from django.conf.urls import url
-
+from django.conf.urls import url, include
+from Usuarios import urls
 from . import views
 
+app_name = 'Index'
+
 urlpatterns = [
-    url(r'^$', views.Index, name='Index')
+    #/administrador/
+    url(r'^$', views.Index, name='dashboard'),
+
 ]

@@ -10,8 +10,7 @@
         <img id="AdminClases" src="{% static "Index/img/Admin/Index_Clases.png" %}"/>
         <img id="AdminInstituciones" src="{% static "Index/img/Admin/Index_Instituciones.png" %}"/>
         <img id="AdminReportes" src="{% static "Index/img/Admin/Index_Reportes.png" %}"/>
-        <img id="AdminUsuarios" src="{% static "Index/img/Admin/Index_Usuarios.png" %}"/>
+        <a href="{% url 'Usuarios:user_lists'%}"><img id="AdminUsuarios" src="{% static "Index/img/Admin/Index_Usuarios.png" %}"/> </a>
     </div>
-
 
 {% endblock content %}
