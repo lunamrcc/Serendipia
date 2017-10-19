@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from Usuarios import views
+
+app_name='Serendipia'
 
 urlpatterns = [
+    #admin
     url(r'^admin/', admin.site.urls),
+
+    #login
+    #url(r'^login/', views.login, name='login'),
+
+    #administrador
     url(r'^administrador/', include('Index.urls', namespace='administrador')),
     url(r'^administrador/usuarios', include('Usuarios.urls', namespace='usuarios')),
 ]

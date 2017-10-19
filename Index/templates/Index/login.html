@@ -1,10 +1,45 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Serendipia - Iniciar Sesion</title>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import CSS (Materialize, Freelancer)-->
+    <link type="text/css" href="{% static "Index/css/materialize.min.css" %}" rel="stylesheet" media="screen,projection">
+    <link type="text/css" href="{% static "Index/css/freelancer.css" %}" rel="stylesheet" media="screen,projection">
+
+</head>
+
+<body>
+    <div class="container">
+        <br> <br> <br> <br> <br> <br>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <input id="Email" type="text" class="validate">
+                    <label for="Email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <input id="Password" type="password" class="validate">
+                    <label for="Password">Password</label>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="{% static "Index/js/materialize.min.js" %}"></script>
+
 </html>
