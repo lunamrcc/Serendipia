@@ -1,7 +1,8 @@
 from .models import Instituciones
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
+from django.views.generic import UpdateView
 
 from .forms import InstForm
 
@@ -41,7 +42,7 @@ def inst_create(request):
             return inst_lists(request)
 
     context = {
-        'NewInstFrom': NewInstForm
+        'NewInstForm': NewInstForm
     }
     return render(request, 'Instituciones/instituciones_form.html', context)
 
@@ -50,4 +51,15 @@ def inst_create(request):
 
 
 
+class inst_update(UpdateView):
+    model = Instituciones
+    fields = [
+        'nombre',
+        'direccion',
+        'telefono',
+        'coordenadaX',
+        'coordenadaY'
+    ]
+    template_name = 'Instituciones/instituciones_edit_form.html'
 
+    success_url = reverse_lazy('Instituciones:inst_lists')
