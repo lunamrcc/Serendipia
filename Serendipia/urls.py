@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #login
-    #url(r'^login/', views.login, name='login'),
+    url(r'^login/', views.login, name='login'),
 
     #administrador
     url(r'^administrador/', include('Index.urls', namespace='administrador')),

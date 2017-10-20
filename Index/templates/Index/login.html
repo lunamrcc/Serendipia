@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,19 +23,19 @@
         <br> <br> <br> <br> <br> <br>
         <form method="post">
             {% csrf_token %}
-
             <div class="row">
                 <div class="input-field col s4 offset-s4">
-                    <input id="Email" type="text" class="validate">
                     <label for="Email">Email</label>
+                    {{ NewLoginForm.Email | add_class:'form-control' }}
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s4 offset-s4">
-                    <input id="Password" type="password" class="validate">
-                    <label for="Password">Password</label>
+                    <label for="Password">Contrasenia</label>
+                    {{ NewLoginForm.Passwd }}
                 </div>
             </div>
+            <button type="submit" class="waves-light btn green accent-2">Iniciar Sesion</button>
         </form>
     </div>
 </body>

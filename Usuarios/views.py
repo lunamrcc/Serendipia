@@ -5,23 +5,57 @@ from django.core.urlresolvers import reverse, reverse_lazy
 
 from .models import Usuarios
 
-from .forms import UsuariosForm
+from .forms import UsuariosForm, LoginForm
 
 # Create your views here.
 
-# def login(request):
-#     email = request.POST.get('Email', False)
-#     password = request.POST.get('Password', False)
-#     user = Usuarios.objects.filter(Email=email)
-#     if user.count() > 0:
-#         user = Usuarios.objects.filter(Email=email, Passwd=password)
-#         if user.count() > 0:
-#             context ={}
-#             return render(request, 'Index/login.html',context)
-#         else:
-#             return HttpResponseRedirect(reversed('Index/login.html'))
-#     else:
-#         return HttpResponseRedirect(reversed('Index/login.html'))
+def login(request):
+    context = {}
+    NewLoginForm = LoginForm()
+    #Checar POST
+    if request.method == 'POST':
+        NewLoginForm = LoginForm(request.POST)
+        UserValid = NewLoginForm.is_valid()
+        #Checar que la forma sea valida
+        if UserValid:
+            Usu = NewLoginForm.save(commit=False)
+            emailValid = Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.passwd)
+            #Checar que el usuario y la contrasenia esten en la BD
+            if emailValid.count() > 0:
+                return render(request, 'Index/dashboard_admin.html', context)
+
+        context = {
+            'NewLoginForm': NewLoginForm
+        }
+        return render(request, 'Index/login.html', context)
+
+    context = {
+        'NewLoginForm': NewLoginForm
+    }
+    return render(request, 'Index/login.html', context)
+
+    # context = {}
+    # if request == 'POST':
+    #     email = request.POST['Email']
+    #     password = request.POST.get('Password')
+    #     user = Usuarios.objects.filter(Email=email)
+    #     if user.count() > 0:
+    #         return render(request, 'Index/dashboard_admin.html', context)
+    # return render(request, 'Index/login.html', context)
+
+    # email = request.POST.get('Email', False)
+    # password = request.POST.get('Password', False)
+    # user = Usuarios.objects.filter(Email=email)
+    # if user.count() > 0:
+    #     user = Usuarios.objects.filter(Email=email, Passwd=password)
+    #     if user.count() > 0:
+    #         context ={}
+    #         return render(request, 'Index/login.html',context)
+    #     else:
+    #         return HttpResponseRedirect(reversed('Index/login.html'))
+    # else:
+    #     return HttpResponseRedirect(reversed('Index/login.html'))
+
 
 def user_lists(request):
     all_users = Usuarios.objects.all()
@@ -29,6 +63,7 @@ def user_lists(request):
         'all_users': all_users
         }
     return render(request, 'Usuarios/usuarios_list.html',context)
+
 
 def user_create(request):
     context = {}
