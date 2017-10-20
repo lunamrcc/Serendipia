@@ -9,5 +9,5 @@ class UsuariosForm(forms.ModelForm):
 class LoginForm(forms.ModelForm):
     class Meta:
         model = Usuarios
-        passwd = forms.CharField(widget=forms.PasswordInput)
-        fields = ('Email', 'passwd')
+        Passwd = forms.CharField(widget=forms.PasswordInput)
+        fields = ('Email', 'Passwd')

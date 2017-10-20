@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="input-field col s4 offset-s4">
                     <label for="Password">Contrasenia</label>
-                    {{ NewLoginForm.Passwd }}
+                    {{ NewLoginForm.Passwd | add_class:'form-control' }}
                 </div>
             </div>
             <button type="submit" class="waves-light btn green accent-2">Iniciar Sesion</button>

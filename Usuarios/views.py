@@ -19,7 +19,7 @@ def login(request):
         #Checar que la forma sea valida
         if UserValid:
             Usu = NewLoginForm.save(commit=False)
-            emailValid = Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.passwd)
+            emailValid = Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.Passwd)
             #Checar que el usuario y la contrasenia esten en la BD
             if emailValid.count() > 0:
                 return render(request, 'Index/dashboard_admin.html', context)
