@@ -23,9 +23,10 @@ class Migration(migrations.Migration):
                 ('Telefono', models.CharField(max_length=15)),
                 ('Escuela', models.CharField(max_length=50)),
                 ('Correo', models.EmailField(max_length=254)),
+                ('Passwd', models.EmailField(max_length=50)),
                 ('Activo', models.BooleanField(default=True)),
             ],
-        ),
+            ),
     ]
 
     

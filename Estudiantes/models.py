@@ -33,6 +33,10 @@ class Estudiantes(models.Model):
     Correo = models.EmailField(
         null=False,
     )
+    Passwd = models.CharField(
+        max_length=20,
+        null=False,
+    )
     Activo = models.BooleanField(
         default = True,
     )

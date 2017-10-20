@@ -53,7 +53,7 @@ class student_update(UpdateView):
         'aPaterno',
         'aMaterno',
         'Telefono',
-        'Escuela'
+        'Escuela',
         'Correo',
         'Passwd'
     ]
