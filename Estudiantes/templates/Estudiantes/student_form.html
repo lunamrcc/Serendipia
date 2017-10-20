@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="container">
+    <br>
+    <h3 class="center green-text text-accent-2"> Estudiantes - Crear Estudiantes </h3>
+    <br> <br> <br>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="row">
+                <label for="Nombre"> Nombre: </label>
+                {{ NewEstudiantesForm.Nombre | add_class:'form-control' }}
+            </div>
+            <div class="row">
+                <label for="Apaterno"> Apellido Paterno: </label>
+                {{ NewEstudiantesForm.Apaterno | add_class:'form-control' }}
+            </div>
+            <div class="row">
+                <label for="Amaterno"> Apellido Materno: </label>
+                {{ NewEstudiantesForm.Amaterno | add_class:'form-control' }}
+            </div>
+            <div class="row">
+                <label for="Telefono"> Telefono: </label>
+                {{ NewEstudiantesForm.Telefono | add_class:'form-control' }}
+            </div>
+            <div class="row">
+                <label for="Email"> Email: </label>
+                {{ NewEstudiantesForm.Email | add_class:'form-control' }}
+            </div>
+            <div class="row">
+                <label for="Passwd"> Contrasenia: </label>
+                {{ NewEstudiantesForm.Passwd | add_class:'form-control' }}
+            </div>
+        </div>
+        <button type="submit" class="waves-light btn green accent-2">Agregar Estudiante</button>
+    </form>
+</div>
+
+{% endblock content %}

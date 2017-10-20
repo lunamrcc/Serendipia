@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <br>
+        <h3 class="center green-text text-accent-2"> Usuarios </h3>
+        <br> <br> <br>
+        <a href="{% url 'Estudiantes:student_create' %}" class="waves-light btn green accent-2"><i class="material-icons right">add</i>Agregar Estudiante</a>
+        <br> <br> <br> <br>
+        <table class="highlight responsive-table">
+            <thead class="thead-default">
+                <tr>
+                    <th class="center-align">Nombre</th>
+                    <th class="center-align">Apellidos</th>
+                    <th class="center-align">Telefono</th>
+                    <th class="center-align">Escuela</th>
+                    <th class="center-align">Correo</th>
+                    <th class="center-align">Activo</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in all_users %}
+
+            <tr>
+                <td class="center-align">{{student.Nombre}}</td>
+                <td class="center-align">{{student.aPaterno}} {{student.aMaterno}}</td>
+                <td class="center-align">{{student.Telefono}}</td>
+                <td class="center-align">{{student.Escuela}}</td>
+                <td class="center-align">{{student.Correo}}</td>
+
+                <td class="center-align">
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Estudiante"
+                       href="{% url 'Estudiantes:student_update' student.EstudianteID %}">
+                        <i class="material-icons light-blue-text">create</i>
+                    </a>&nbsp; &nbsp; &nbsp; &nbsp;
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Estudiante"
+                       href="{% url 'Estudiantes:student_delete' student.EstudianteID %}">
+                        <i class="material-icons red-text">delete</i>
+                    </a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Cambiar Estatus"
+                       href="{% url 'Estudiantes:student_change_status' student.EstudianteID %}">
+                    <i class="material-icons blue-grey-text">compare_arrows</i>
+                    </a>
+                </td>
+
+                {% if student.Activo == True %}
+                <td class="center-align"><i class="material-icons green-text">done</i></td>
+                {% else %}
+                <td class="center-align"><i class="material-icons red-text">clear</i></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock content %}
