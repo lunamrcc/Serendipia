@@ -3,29 +3,29 @@ from django.db import models
 # Create your models here.
 
 class Instituciones(models.Model):
-    InstitucionID = models.IntegerField(
+    institucionID = models.IntegerField(
         primary_key = True,
         null = False
     )
-    Nombre = models.CharField(
+    nombre = models.CharField(
         max_length = 50,
         null = False
     )
-    Direccion = models.CharField(
+    direccion = models.CharField(
         max_length = 50,
         null = False
     )
-    Telefono = models.CharField(
+    telefono = models.CharField(
         max_length = 50,
         null = False
     )
-    CoordenadaX = models.FloatField(
+    coordenadaX = models.FloatField(
         null = True
     )
-    CoordenadaY = models.FloatField(
+    coordenadaY = models.FloatField(
         null = True
     )
 
     def __str__(self):
-        return self.Nombre
+        return self.nombre
 
