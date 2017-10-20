@@ -18,11 +18,13 @@
 
 </head>
 
-<body class="grey lighten-3">
+<body class="white">
 
   <nav>
-    <div class="purple accent-4 nav-wrapper">
-      <a href="{% url 'administrador:Index' %}" class="brand-logo">Logo</a>
+    <div class="green accent-2 nav-wrapper">
+      <a href="{% url 'administrador:dashboard' %}" class="brand-logo center">
+          <img id="Logo" width="40%" src="{% static "Index/img/Logo.png" %}">
+      </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="sass.html"><i class="material-icons left">settings_power</i>Cerrar Sesión</a></li>
   </ul>

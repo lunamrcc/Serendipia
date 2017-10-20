@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <br>
+        <h3 class="center green-text text-accent-2"> Usuarios </h3>
+        <br> <br> <br>
+        <a href="{% url 'Usuarios:user_create' %}" class="waves-light btn green accent-2"><i class="material-icons right">add</i>Agregar Usuario</a>
+        <br> <br> <br> <br>
+        <table class="highlight responsive-table">
+            <thead class="thead-default">
+                <tr>
+                    <th class="center-align">Nombre</th>
+                    <th class="center-align">Apellidos</th>
+                    <th class="center-align">Telefono</th>
+                    <th class="center-align">Email</th>
+                    <th class="center-align">Funcionalidades</th>
+                    <th class="center-align">Activo</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in all_users %}
+
+            <tr>
+                <td class="center-align">{{user.Nombre}}</td>
+                <td class="center-align">{{user.Apaterno}} {{user.Amaterno}}</td>
+                <td class="center-align">{{user.Telefono}}</td>
+                <td class="center-align">{{user.Email}}</td>
+
+                <td class="center-align">
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Usuario"
+                       href="{% url 'Usuarios:user_update' user.Usuarioid %}">
+                        <i class="material-icons light-blue-text">create</i>
+                    </a>&nbsp; &nbsp; &nbsp; &nbsp;
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Usuario"
+                       href="{% url 'Usuarios:user_delete' user.Usuarioid %}">
+                        <i class="material-icons red-text">delete</i>
+                    </a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Cambiar Estatus"
+                       href="{% url 'Usuarios:user_change_status' user.Usuarioid %}">
+                    <i class="material-icons blue-grey-text">compare_arrows</i>
+                    </a>
+                </td>
+
+                {% if user.Activo == True %}
+                <td class="center-align"><i class="material-icons green-text">done</i></td>
+                {% else %}
+                <td class="center-align"><i class="material-icons red-text">clear</i></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock content %}

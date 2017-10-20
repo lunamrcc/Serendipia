@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Index.apps.IndexConfig',
     'Estudiantes.apps.EstudiantesConfig',
-
+    'Usuarios.apps.UsuariosConfig',
     'widget_tweaks',
 ]
 

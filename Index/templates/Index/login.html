@@ -1,0 +1,46 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Serendipia - Iniciar Sesion</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import CSS (Materialize, Freelancer)-->
+    <link type="text/css" href="{% static "Index/css/materialize.min.css" %}" rel="stylesheet" media="screen,projection">
+    <link type="text/css" href="{% static "Index/css/freelancer.css" %}" rel="stylesheet" media="screen,projection">
+
+</head>
+
+<body>
+    <div class="container">
+        <br> <br> <br> <br> <br> <br>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <label for="Email">Email</label>
+                    {{ NewLoginForm.Email | add_class:'form-control' }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <label for="Password">Contrasenia</label>
+                    {{ NewLoginForm.Passwd | add_class:'form-control' }}
+                </div>
+            </div>
+            <button type="submit" class="waves-light btn green accent-2">Iniciar Sesion</button>
+        </form>
+    </div>
+</body>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="{% static "Index/js/materialize.min.js" %}"></script>
+
+</html>
