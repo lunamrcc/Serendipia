@@ -16,4 +16,7 @@ urlpatterns = [
 
     #administrador/usuarios_crear/
     url(r'^_crear/$', views.user_create, name='user_create'),
+
+    #administrador/usuarios_editar/3
+    url(r'^_editar/(?P<pk>[0-9]+)/', views.user_update.as_view(), name='user_update'),
 ]

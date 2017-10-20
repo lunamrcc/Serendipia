@@ -1,11 +1,11 @@
 from django.shortcuts import render
+from django.views.generic import UpdateView
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 
 from .models import Usuarios
 
 from .forms import UsuariosForm
-
 
 # Create your views here.
 
@@ -58,8 +58,19 @@ def user_create(request):
     # if a GET (or any other method) we'll create a blank form
     return render(request, 'Usuarios/usuarios_form.html', context)
 
+class user_update(UpdateView):
+    model = Usuarios
+    fields = [
+        'Nombre',
+        'Apaterno',
+        'Amaterno',
+        'Telefono',
+        'Email',
+        'Passwd'
+    ]
+    template_name = 'Usuarios/user_edit_form.html'
 
-
+    success_url = reverse_lazy('Usuarios:user_lists')
 
 def user_delete(request, pk):
     user = Usuarios.objects.filter(Usuarioid=pk)
@@ -75,3 +86,5 @@ def user_change_status(request, pk):
         user.Activo = True
         user.save()
     return HttpResponseRedirect(reverse('Usuarios:user_lists'))
+
+

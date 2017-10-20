@@ -30,7 +30,8 @@
                 <td class="center-align">{{user.Email}}</td>
 
                 <td class="center-align">
-                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Usuario">
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Usuario"
+                       href="{% url 'Usuarios:user_update' user.Usuarioid %}">
                         <i class="material-icons light-blue-text">create</i>
                     </a>&nbsp; &nbsp; &nbsp; &nbsp;
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Usuario"
@@ -49,7 +50,6 @@
                 <td class="center-align"><i class="material-icons red-text">clear</i></td>
                 {% endif %}
             </tr>
-
             {% endfor %}
 
             </tbody>
