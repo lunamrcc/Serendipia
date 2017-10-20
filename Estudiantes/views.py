@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import UpdateView
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 
 from .models import Estudiantes
 
@@ -9,19 +10,6 @@ from .forms import EstudiantesForm
 
 # Create your views here.
 
-# def login(request):
-#     email = request.POST.get('Email', False)
-#     password = request.POST.get('Password', False)
-#     user = Usuarios.objects.filter(Email=email)
-#     if user.count() > 0:
-#         user = Usuarios.objects.filter(Email=email, Passwd=password)
-#         if user.count() > 0:
-#             context ={}
-#             return render(request, 'Index/login.html',context)
-#         else:
-#             return HttpResponseRedirect(reversed('Index/login.html'))
-#     else:
-#         return HttpResponseRedirect(reversed('Index/login.html'))
 
 def student_lists(request):
     all_students = Estudiantes.objects.all()
@@ -58,7 +46,20 @@ def student_create(request):
     # if a GET (or any other method) we'll create a blank form
     return render(request, 'Estudiantes/student_form.html', context)
 
+class student_update(UpdateView):
+    model = Estudiantes
+    fields = [
+        'Nombre',
+        'aPaterno',
+        'aMaterno',
+        'Telefono',
+        'Escuela'
+        'Correo',
+        'Passwd'
+    ]
+    template_name = 'Estudiantes/student_edit_form.html'
 
+    success_url = reverse_lazy('Estudiantes:student_lists')
 
 
 def student_delete(request, pk):

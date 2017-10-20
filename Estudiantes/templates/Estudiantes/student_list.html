@@ -5,7 +5,7 @@
 
     <div class="container">
         <br>
-        <h3 class="center green-text text-accent-2"> Usuarios </h3>
+        <h3 class="center green-text text-accent-2"> Estudiantes </h3>
         <br> <br> <br>
         <a href="{% url 'Estudiantes:student_create' %}" class="waves-light btn green accent-2"><i class="material-icons right">add</i>Agregar Estudiante</a>
         <br> <br> <br> <br>
@@ -21,11 +21,12 @@
                 </tr>
             </thead>
             <tbody>
-            {% for user in all_users %}
+            {% for student in all_students %}
 
             <tr>
                 <td class="center-align">{{student.Nombre}}</td>
-                <td class="center-align">{{student.aPaterno}} {{student.aMaterno}}</td>
+                <td class="center-align">{{student.aPaterno}}</td>
+                <td class="center-align">{{student.aMaterno}}</td>
                 <td class="center-align">{{student.Telefono}}</td>
                 <td class="center-align">{{student.Escuela}}</td>
                 <td class="center-align">{{student.Correo}}</td>
