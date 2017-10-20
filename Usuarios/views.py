@@ -51,7 +51,7 @@ def user_create(request):
             return user_lists(request)
 
     context = {
-        'NewUsuariosFrom': NewUsuariosForm
+        'NewUsuariosForm': NewUsuariosForm
     }
     return render(request, 'Usuarios/usuarios_form.html', context)
 
