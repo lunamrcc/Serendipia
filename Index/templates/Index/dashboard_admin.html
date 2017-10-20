@@ -5,7 +5,7 @@
 
     <div class="container">
         <img id="AdminMiCuenta" src="{% static "Index/img/Admin/Index_MiCuenta.png" %}"/>
-        <img id="AdminEstudiante" src="{% static "Index/img/Admin/Index_Estudiantes.png" %}"/>
+        <a href="{% url 'Estudiantes:student_lists'%}"><img id="AdminEstudiante" src="{% static "Index/img/Admin/Index_Estudiantes.png" %}"/> </a>
         <img id="AdminAsistencias" src="{% static "Index/img/Admin/Index_Asistencias.png" %}"/>
         <img id="AdminClases" src="{% static "Index/img/Admin/Index_Clases.png" %}"/>
         <img id="AdminInstituciones" src="{% static "Index/img/Admin/Index_Instituciones.png" %}"/>
