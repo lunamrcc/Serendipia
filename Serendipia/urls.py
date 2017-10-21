@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^administrador/', include('Index.urls', namespace='administrador')),
     url(r'^administrador/usuarios/', include('Usuarios.urls', namespace='usuarios')),
     url(r'^administrador/estudiantes/', include('Estudiantes.urls', namespace='estudiantes')),
+    url(r'^administrador/instituciones/', include('Instituciones.urls', namespace='instituciones')),
 ]

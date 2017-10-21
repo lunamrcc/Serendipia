@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Index.apps.IndexConfig',
     'Estudiantes.apps.EstudiantesConfig',
     'Usuarios.apps.UsuariosConfig',
+    'Instituciones.apps.InstitucionesConfig',
     'widget_tweaks',
 ]
 
