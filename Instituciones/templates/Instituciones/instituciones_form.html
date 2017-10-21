@@ -4,7 +4,7 @@
 
 <div class="container">
     <br>
-    <h3 class="center pink-text"> Instituciones - Crear Institución </h3>
+    <h3 class="center green-text text-accent-2"> Instituciones - Crear Institución </h3>
     <br> <br> <br>
     <form method="post">
         {% csrf_token %}
@@ -30,7 +30,7 @@
                 {{ NewInstForm.coordenadaY | add_class:'form-control' }}
             </div>
         </div>
-        <button type="submit" class="waves-light btn pink">Agregar Institución</button>
+        <button type="submit" class="waves-light btn green accent-2">Agregar Institución</button>
     </form>
 </div>
 

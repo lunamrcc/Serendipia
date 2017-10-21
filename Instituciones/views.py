@@ -41,7 +41,7 @@ def inst_create(request):
             return inst_lists(request)
 
     context = {
-        'NewInstFrom': NewInstForm
+        'NewInstForm': NewInstForm
     }
     return render(request, 'Instituciones/instituciones_form.html', context)
 
