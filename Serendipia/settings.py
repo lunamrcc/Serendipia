@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Index.apps.IndexConfig',
     'Instituciones.apps.InstitucionesConfig',
     'widget_tweaks',
+    'SSInstituciones.apps.SsinstitucionesConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class="container">
+        <br>
+        <h3 class="center pink-text"> Instituciones </h3>
+        <br> <br> <br>
+        <a href="{% url 'Instituciones:inst_create' %}" class="waves-light btn pink"><i class="material-icons right">add</i>Agregar Instituciones</a>
+        <br> <br> <br>
+        <table class="highlight responsive-table">
+            <thead class="thead-default">
+                <tr>
+                    <th class="center-align">Institución</th>
+                    <th class="center-align">Dirección</th>
+                    <th class="center-align">Teléfono</th>
+                    <th class="center-align">Latitud</th>
+                    <th class="center-align">Longitud</th>
+                    <th class="center-align">Funcionalidades</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for inst in all_inst%}
+
+            <tr>
+                <td class="center-align">{{inst.nombre}}</td>
+                <td class="center-align">{{inst.direccion}}</td>
+                <td class="center-align">{{inst.telefono}}</td>
+                <td class="center-align">{{inst.coordenadaX}}</td>
+                <td class="center-align">{{inst.coordenadaY}}</td>
+
+                <td class="center-align">
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Usuario"
+                        href="{% url 'Instituciones:inst_update' inst.institucionID %}">
+                        <i class="material-icons light-blue-text">create</i>
+                    </a>&nbsp; &nbsp; &nbsp; &nbsp;
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Usuario"
+                       href="{% url 'Instituciones:inst_delete' inst.institucionID %}">
+                        <i class="material-icons red-text">delete</i>
+                    </a> &nbsp; &nbsp; &nbsp; &nbsp;
+                </td>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+{% endblock content %}
