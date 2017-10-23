@@ -1,4 +1,5 @@
 from .models import SSInstituciones
+from Instituciones.models import Instituciones
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse, reverse_lazy
@@ -6,19 +7,17 @@ from django.views.generic import UpdateView
 
 from .forms import InstForm
 
-
-# Create your views here.
 def inst_lists(request):
-    all_inst = SSInstituciones.objects.all()
+    all_inst = Instituciones.objects.all()
     context ={
         'all_inst': all_inst
         }
     return render(request, 'SSInstituciones/instituciones_list.html',context)
 
 def inst_delete(request, pk):
-    inst = SSInstituciones.objects.filter(institucionID=pk)
+    inst = Instituciones.objects.filter(institucionID=pk)
     inst.delete()
-    return HttpResponseRedirect(reverse('SSInstituciones:inst_lists'))
+    return HttpResponseRedirect(reverse('Ssinstituciones:inst_lists'))
 
 
 def inst_create(request):
@@ -52,7 +51,7 @@ def inst_create(request):
 
 
 class inst_update(UpdateView):
-    model = SSInstituciones
+    model = Instituciones
     fields = [
         'nombre',
         'direccion',
@@ -62,4 +61,4 @@ class inst_update(UpdateView):
     ]
     template_name = 'SSInstituciones/instituciones_edit_form.html'
 
-    success_url = reverse_lazy('SSInstituciones:inst_lists')
+    success_url = reverse_lazy('Ssinstituciones:inst_lists')
