@@ -33,15 +33,15 @@
 
                 <td class="center-align">
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Estudiante"
-                       href="{% url 'Estudiantes:student_update' student.EstudianteID %}">
+                       href="{% url 'Estudiantes:student_update' student.pk %}">
                         <i class="material-icons light-blue-text">create</i>
                     </a>&nbsp; &nbsp; &nbsp; &nbsp;
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Estudiante"
-                       href="{% url 'Estudiantes:student_delete' student.EstudianteID %}">
+                       href="{% url 'Estudiantes:student_delete' student.pk %}">
                         <i class="material-icons red-text">delete</i>
                     </a> &nbsp; &nbsp; &nbsp; &nbsp;
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Cambiar Estatus"
-                       href="{% url 'Estudiantes:student_change_status' student.EstudianteID %}">
+                       href="{% url 'Estudiantes:student_change_status' student.pk %}">
                     <i class="material-icons blue-grey-text">compare_arrows</i>
                     </a>
                 </td>

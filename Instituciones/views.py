@@ -16,7 +16,7 @@ def inst_lists(request):
     return render(request, 'Instituciones/instituciones_list.html',context)
 
 def inst_delete(request, pk):
-    inst = Instituciones.objects.filter(institucionID=pk)
+    inst = Instituciones.objects.filter(pk=pk)
     inst.delete()
     return HttpResponseRedirect(reverse('Instituciones:inst_lists'))
 
@@ -48,8 +48,6 @@ def inst_create(request):
 
     # if a GET (or any other method) we'll create a blank form
     return render(request, 'Instituciones/instituciones_form.html', context)
-
-
 
 class inst_update(UpdateView):
     model = Instituciones

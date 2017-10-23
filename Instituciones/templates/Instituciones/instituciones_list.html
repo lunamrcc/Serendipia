@@ -32,11 +32,11 @@
 
                 <td class="center-align">
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Usuario"
-                        href="{% url 'Instituciones:inst_update' inst.institucionID %}">
+                        href="{% url 'Instituciones:inst_update' inst.pk %}">
                         <i class="material-icons light-blue-text">create</i>
                     </a>&nbsp; &nbsp; &nbsp; &nbsp;
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Usuario"
-                       href="{% url 'Instituciones:inst_delete' inst.institucionID %}">
+                       href="{% url 'Instituciones:inst_delete' inst.pk %}">
                         <i class="material-icons red-text">delete</i>
                     </a> &nbsp; &nbsp; &nbsp; &nbsp;
                 </td>

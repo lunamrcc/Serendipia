@@ -61,14 +61,13 @@ class student_update(UpdateView):
 
     success_url = reverse_lazy('Estudiantes:student_lists')
 
-
 def student_delete(request, pk):
-    student = Estudiantes.objects.filter(EstudianteID=pk)
+    student = Estudiantes.objects.filter(pk=pk)
     student.delete()
     return HttpResponseRedirect(reverse('Estudiantes:student_lists'))
 
 def student_change_status(request, pk):
-    student = Estudiantes.objects.get(EstudianteID=pk)
+    student = Estudiantes.objects.get(pk=pk)
     if student.Activo:
         student.Activo = False
         student.save()

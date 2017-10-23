@@ -19,6 +19,7 @@ def login(request):
         #Checar que la forma sea valida
         if UserValid:
             Usu = NewLoginForm.save(commit=False)
+            #Checar que el usuario sea Administrador
             emailValid = Usuarios.objects.filter(Email=Usu.Email, Passwd=Usu.Passwd)
             #Checar que el usuario y la contrasenia esten en la BD
             if emailValid.count() > 0:
@@ -108,12 +109,12 @@ class user_update(UpdateView):
     success_url = reverse_lazy('Usuarios:user_lists')
 
 def user_delete(request, pk):
-    user = Usuarios.objects.filter(Usuarioid=pk)
+    user = Usuarios.objects.filter(pk=pk)
     user.delete()
     return HttpResponseRedirect(reverse('Usuarios:user_lists'))
 
 def user_change_status(request, pk):
-    user = Usuarios.objects.get(Usuarioid=pk)
+    user = Usuarios.objects.get(pk=pk)
     if user.Activo:
         user.Activo = False
         user.save()
