@@ -31,7 +31,8 @@
                 <td class="center-align">{{inst.coordenadaY}}</td>
 
                 <td class="center-align">
-                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Usuario">
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar Usuario"
+                        href="{% url 'Instituciones:inst_update' inst.institucionID %}">
                         <i class="material-icons light-blue-text">create</i>
                     </a>&nbsp; &nbsp; &nbsp; &nbsp;
                     <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Eliminar Usuario"
